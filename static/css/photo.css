@@ -1,0 +1,17 @@
+.s03-text{
+    text-anchor: start; dominant-baseline: hanging;
+    text-align: center;
+    font-size: 80px;
+    padding: 20px;
+    margin: 20px;
+  }
+  .s03-fill{
+    fill: #e7d4e3;
+  }
+  .s03-mbm{
+    mix-blend-mode: multiply;
+  }
+
+  
+
+  

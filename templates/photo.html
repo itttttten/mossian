@@ -1,0 +1,166 @@
+{% extends "layout.html" %}
+{% block content %}
+  
+
+<div class="container">
+    <div class="box">
+      <link rel="stylesheet" href="../static/css/photo.css">
+      <script src="static/js/photo.js"></script>
+    </div>
+</div>
+  
+
+
+<body>
+
+    <video id="camera" width="300" height="200"></video>
+    <canvas id="picture" width="300" height="200"></canvas>
+    <form>
+    <button type="button" id="shutter">シャッター</button>
+    </form>
+
+    <audio id="se" preload="auto">
+    <source src="camera-shutter1.mp3" type="audio/mp3">
+    </audio>
+
+    <script>
+    window.onload = () => {
+    const video  = document.querySelector("#camera");
+    const canvas = document.querySelector("#picture");
+    const se     = document.querySelector('#se');
+
+    /** カメラ設定 */
+    const constraints = {
+        audio: false,
+        video: {
+        width: 300,
+        height: 200,
+        facingMode: "user"   // フロントカメラを利用する
+        // facingMode: { exact: "environment" }  // リアカメラを利用する場合
+        }
+    };
+
+    /**
+    * カメラを<video>と同期
+    */
+    navigator.mediaDevices.getUserMedia(constraints)
+    .then( (stream) => {
+        video.srcObject = stream;
+        video.onloadedmetadata = (e) => {
+        video.play();
+        };
+    })
+    .catch( (err) => {
+        console.log(err.name + ": " + err.message);
+    });
+
+    /**
+    * シャッターボタン
+    */
+    document.querySelector("#shutter").addEventListener("click", () => {
+        const ctx = canvas.getContext("2d");
+
+        // 演出的な目的で一度映像を止めてSEを再生する
+        video.pause();  // 映像を停止
+        se.play();      // シャッター音
+        setTimeout( () => {
+        video.play();    // 0.5秒後にカメラ再開
+        }, 500);
+
+        // canvasに画像を貼り付ける
+        ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
+    });
+    };
+    </script>
+    
+    <svg viewBox="0 0 720 80">
+        <defs>
+            <path id="svg03-path" d="M -40 10 Q -30 20 -20 10 Q -10  0 0 10 Q 10 20 20 10 Q 30  0 40 10 Q 50 20 60 10 Q 70 20 80 10 V 94 H -40 Z"></path>
+            <pattern id="svg03-pt-a" x="0" y="5" width="40" height="100" patternUnits="userSpaceOnUse" patternTransform="scale(5,2)">
+            <use class="s03-fill" href="#svg03-path" />
+            <animate attributeName="x" dur="2s" repeatCount="indefinite" values="0; -40"/>
+            </pattern>
+            <pattern id="svg03-pt-b" x="0" y="5" width="40" height="100" patternUnits="userSpaceOnUse" patternTransform="scale(5,2)">
+            <use class="s03-fill" href="#svg03-path" />
+            <animate attributeName="x" dur="2.5s" repeatCount="indefinite" values="0; -40"/>
+            </pattern>
+            <pattern id="svg03-pt-c" x="0" y="5" width="40" height="100" patternUnits="userSpaceOnUse" patternTransform="scale(7,3)">
+            <use class="s03-fill" href="#svg03-path" />
+            <animate attributeName="x" dur="3s" repeatCount="indefinite" values="0; -40"/>
+            </pattern>
+            <text id="svg03-text" class="s03-text" x="0" y="10">Take a photo</text>
+            <mask id="svg03-text-mask">
+            <use x="0" y="0" xlink:href="#svg03-text" fill="#fff"/>
+            </mask>
+        </defs>
+        
+        <use  class="s03-mbm s03-fill" x="0" y="0" xlink:href="#svg03-text" />
+        <rect class="s03-mbm" x="0" y="0" width="720" height="100" fill="url(#svg03-pt-a)" mask="url(#svg03-text-mask)"></rect>
+        <rect class="s03-mbm" x="0" y="0" width="720" height="100" fill="url(#svg03-pt-b)" mask="url(#svg03-text-mask)"></rect>
+        <rect class="s03-mbm" x="0" y="0" width="720" height="100" fill="url(#svg03-pt-c)" mask="url(#svg03-text-mask)"></rect>
+    </svg>
+
+
+    <video id="camera" width="300" height="200"></video>
+    <canvas id="picture" width="300" height="200"></canvas>
+    <form>
+    <button type="button" id="shutter">シャッター</button>
+    </form>
+
+    <audio id="se" preload="auto">
+    <source src="camera-shutter1.mp3" type="audio/mp3">
+    </audio>
+
+    <script>
+    window.onload = () => {
+    const video  = document.querySelector("#camera");
+    const canvas = document.querySelector("#picture");
+    const se     = document.querySelector('#se');
+
+    /** カメラ設定 */
+    const constraints = {
+        audio: false,
+        video: {
+        width: 300,
+        height: 200,
+        facingMode: "user"   // フロントカメラを利用する
+        // facingMode: { exact: "environment" }  // リアカメラを利用する場合
+        }
+    };
+
+    /**
+    * カメラを<video>と同期
+    */
+    navigator.mediaDevices.getUserMedia(constraints)
+    .then( (stream) => {
+        video.srcObject = stream;
+        video.onloadedmetadata = (e) => {
+        video.play();
+        };
+    })
+    .catch( (err) => {
+        console.log(err.name + ": " + err.message);
+    });
+
+    /**
+    * シャッターボタン
+    */
+    document.querySelector("#shutter").addEventListener("click", () => {
+        const ctx = canvas.getContext("2d");
+
+        // 演出的な目的で一度映像を止めてSEを再生する
+        video.pause();  // 映像を停止
+        se.play();      // シャッター音
+        setTimeout( () => {
+        video.play();    // 0.5秒後にカメラ再開
+        }, 500);
+
+        // canvasに画像を貼り付ける
+        ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
+    });
+    };
+    </script>
+</body>
+</html>
+
+{% endblock %}

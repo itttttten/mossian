@@ -1,0 +1,45 @@
+{% extends "layout.html" %}
+{% block content %}
+
+<body>
+  <div class="indexbox">
+    <svg viewBox="0 0 720 80">
+        <defs>
+          <path id="svg03-path" d="M -40 10 Q -30 20 -20 10 Q -10  0 0 10 Q 10 20 20 10 Q 30  0 40 10 Q 50 20 60 10 Q 70 20 80 10 V 94 H -40 Z"></path>
+          <pattern id="svg03-pt-a" x="0" y="5" width="40" height="100" patternUnits="userSpaceOnUse" patternTransform="scale(5,2)">
+            <use class="s03-fill" href="#svg03-path" />
+            <animate attributeName="x" dur="2s" repeatCount="indefinite" values="0; -40"/>
+          </pattern>
+          <pattern id="svg03-pt-b" x="0" y="5" width="40" height="100" patternUnits="userSpaceOnUse" patternTransform="scale(5,2)">
+            <use class="s03-fill" href="#svg03-path" />
+            <animate attributeName="x" dur="2.5s" repeatCount="indefinite" values="0; -40"/>
+          </pattern>
+          <pattern id="svg03-pt-c" x="0" y="5" width="40" height="100" patternUnits="userSpaceOnUse" patternTransform="scale(7,3)">
+            <use class="s03-fill" href="#svg03-path" />
+            <animate attributeName="x" dur="3s" repeatCount="indefinite" values="0; -40"/>
+          </pattern>
+          <text id="svg03-text" class="s03-text" x="0" y="10">Upload a photo file</text>
+          <mask id="svg03-text-mask">
+            <use x="0" y="0" xlink:href="#svg03-text" fill="#fff"/>
+          </mask>
+        </defs>
+      
+        <use  class="s03-mbm s03-fill" x="0" y="0" xlink:href="#svg03-text" />
+        <rect class="s03-mbm" x="0" y="0" width="720" height="100" fill="url(#svg03-pt-a)" mask="url(#svg03-text-mask)"></rect>
+        <rect class="s03-mbm" x="0" y="0" width="720" height="100" fill="url(#svg03-pt-b)" mask="url(#svg03-text-mask)"></rect>
+        <rect class="s03-mbm" x="0" y="0" width="720" height="100" fill="url(#svg03-pt-c)" mask="url(#svg03-text-mask)"></rect>
+    </svg>
+    
+    <form action = "/upload" method="post" enctype="multipart/form-data">
+        <p><input type="file" id = "upload_file" name = "upload_file" multiple="multiple" class="form-control"></p>
+        <p><input type="submit" value="送信" class="form-control btn btn-primary"></p>
+    </form>
+  </div>
+</body>
+
+<footer class="bg-dark text-light">
+  <p class="text-center">Copyright 2020 tanu.</p>
+  <p class="text-center">homepage creater itten.</p>
+</footer>
+
+{% endblock %}

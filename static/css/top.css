@@ -1,0 +1,133 @@
+@import url('static/css/dog_image/fishes.jpg');
+
+body {
+  font-family: 'Merienda', cursive;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/85188/beach-heart.JPG) center center;
+  background-size: cover;
+}
+
+
+.box {
+  font-family: 'Merienda', cursive;
+  background: rgba(255,255,255,.7);
+  border-radius: 5px;
+  padding: 20px;
+  text-align: center;
+}
+
+
+.box2 {
+  font-family: 'Merienda', cursive;
+  background: rgba(255,255,255,.7);
+  border-radius: 5px;
+  padding: 20px;
+  text-align: center;
+}
+
+
+.fashionable-box3{
+  font-family: 'Merienda', cursive;
+  margin: 1em 0;
+  padding: 1em;
+  box-shadow: 0 0 3px 3px #40c4ff, 0 0 3px 2px #40c4ff inset;
+  border-radius: 10px;
+  background: #e1f5fe;
+  text-align: center;
+}
+
+.fashionable-box3 p{
+  margin: 0;
+  padding: 0;
+}
+
+.fashionable-box4{
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;  margin: 1em 0;
+  padding: 1em;
+  box-shadow: 0 0 3px 3px #ffac4e, 0 0 3px 2px #ffac4c inset;
+  border-radius: 10px;
+  background: #ffcd87;
+  text-align: center;
+}
+
+.fashionable-box4 p{
+  margin: 0;
+  padding: 0;
+}
+
+.fashionable-box5{
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;  margin: 1em 0;
+  margin: 1em 0;
+  padding: 1em;
+  box-shadow: 0 0 3px 3px #40c4ff, 0 0 3px 2px #40c4ff inset;
+  border-radius: 10px;
+  background: #e1f5fe;
+  text-align: center;
+  display: flex;
+}
+
+
+.fashionable-box5 p{
+  margin: 0;
+  padding: 10px;
+}
+
+.fashionable-box5-mini {
+  text-align: center;
+  line-height: 40px;
+  background-color: #e1f5fe;
+  margin: 10px;
+  padding: 20px;
+  width: 100%;
+}
+
+
+.fashionable-box6 {
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;  margin: 1em 0;
+  margin: 0em 0;
+  padding: 1em;
+  box-shadow: 0 0 3px 3px #ffac4e, 0 0 3px 2px #ffac4c inset;
+  border-radius: 10px;
+  background: #ffcd87;
+  text-align: center;
+  display: flex;
+}
+
+.fashionable-box6 p{
+  margin: 0;
+  padding: 10px;
+}
+
+.fashionable-box6-mini {
+  text-align: center;
+  line-height: 40px;
+  background-color: #ffcd87;
+  margin: 10px;
+  padding: 20px;
+}
+
+
+a {
+  font-size: 20px;
+}
+
+a2 {
+  font-size: 15px;
+  color: blue;
+}
+
+a3 {
+  font-size: 15px;
+  color: blue;
+}
+
+p:hover{
+  color: red;
+}
+
